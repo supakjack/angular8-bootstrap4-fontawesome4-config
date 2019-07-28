@@ -7,22 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
-  myName: string;
-  myScore: number;
-  myImage?: string;
-  myLink?: string;
-  myContent: string;
-
   constructor() { }
 
-  ngOnInit() {
-    this.myName="Smith";
-    this.myScore=90;
-    this.myImage="https://www.standardtrainingindonesia.com/pic/sumarlin_sarangnga_content_919.jpg";
-    this.myLink="https://iosthailand.com";
-    let dataStringArray = ["ก้อย","หัว"];
-    let randomNumber = Math.random()>0.5?1:0;
-    this.myContent=dataStringArray[randomNumber];
+  ngOnInit() { }
+
+  onUserClick(e){
+    alert(`You ${e.type} the button at (${e.clientX},${e.clientY})`)
+  }
+
+  onUserDoubleClick(e){
+    alert(`You ${e.type} the button at (${e.clientX},${e.clientY})`)
   }
 
 }
