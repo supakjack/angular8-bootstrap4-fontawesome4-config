@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-student',
@@ -7,16 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
+  myName: string;
+  myClass: string;
+  myAddress: string;
+  myImage?: string;
+  myShowHide: boolean=true;
+  myButtonName: string='hide';
+
   constructor() { }
 
-  ngOnInit() { }
-
-  onUserClick(e){
-    alert(`You ${e.type} the button at (${e.clientX},${e.clientY})`)
+  ngOnInit() {
+    this.myName = "Natalee Varin";
+    this.myImage = "https://lorempixel.com/400/300/people"
+    this.myClass = "6/1"
+    this.myAddress = "99/99หมู่ 1 ตำบลท้องเนียน นครศรีธรรมราช"
   }
 
-  onUserDoubleClick(e){
-    alert(`You ${e.type} the button at (${e.clientX},${e.clientY})`)
+  myMethod(e){
+    this.myShowHide = !this.myShowHide
   }
 
 }

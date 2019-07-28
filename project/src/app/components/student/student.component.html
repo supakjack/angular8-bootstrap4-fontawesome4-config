@@ -1,12 +1,23 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col-4">
-            <button class="btn btn-primary" (click)="onUserClick($event)">
-                Please Click
-            </button>
-            <button class="btn btn-primary" (dblclick)="onUserDoubleClick($event)">
-                Please Click
-            </button>
+            <div class="card">
+                <img class="card-img-top" src="{{ myImage }}">
+                <div class="card-header">
+                    <div class="float-left">
+                        {{myName}}
+                    </div>
+                    <button class="btn btn-primaray btn-sm flaot-right" (click)="myMethod()" [innerHTML]="myShowHide ?' Hide ' : ' Show '">Hide</button>
+                </div>
+                <div class="card-body" [hidden]="!myShowHide">
+                    <dl class="row">
+                        <dt class="col-lg-3 col-sm-4 col-3">ห้อง</dt>
+                        <dd class="col-lg-9 col-sm-8 col-9">{{myClass}}</dd>
+                        <dt class="col-lg-3 col-sm-4 col-3">ที่อยู่</dt>
+                        <dd class="col-lg-9 col-sm-8 col-9">{{myAddress}}</dd>
+                    </dl>
+                </div>
+            </div>
         </div>
     </div>
 </div>
